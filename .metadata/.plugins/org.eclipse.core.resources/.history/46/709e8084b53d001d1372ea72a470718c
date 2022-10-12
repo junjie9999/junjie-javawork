@@ -1,0 +1,11 @@
+package testpackages;
+
+import customer.createcustomer;
+
+public class testclass {
+	public static void main(String[] args) {
+		createcustomer obj1= new createcustomer();
+		obj1.method1();
+	}
+
+}

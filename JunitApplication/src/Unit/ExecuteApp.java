@@ -1,0 +1,21 @@
+package Unit;
+
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+
+public class ExecuteApp {
+	public static void main(String[] args) {
+		System.out.println("bo something in app");
+		Result res=JUnitCore.runClasses(runtest.class);
+		//res will collect all the result
+		for(Failure fail:res.getFailures())
+		{
+			System.out.println(fail.toString());
+		}
+		System.out.println(res.wasSuccessful());
+	
+		System.out.println("do something in application");
+	}
+
+}

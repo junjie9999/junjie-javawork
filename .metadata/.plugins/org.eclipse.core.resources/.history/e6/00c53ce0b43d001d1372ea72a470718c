@@ -1,0 +1,9 @@
+package payment;
+
+public class paymentclass {
+	public static void main(String[] args) {
+		System.out.println("hello from payment gateway");
+		
+	}
+
+}
