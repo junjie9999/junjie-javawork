@@ -1,9 +1,0 @@
-package testpackages;
-
-public class testclass {
-	public static void main(String[] args) {
-		customerclass obj1= new customerclass();
-		obj1.method1();
-	}
-
-}

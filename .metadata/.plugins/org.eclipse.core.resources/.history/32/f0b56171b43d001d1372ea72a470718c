@@ -1,8 +1,0 @@
-package customer;
-
-public class createcustomer {
-	public static void main(String[] args) {
-		System.out.println("Hello customer"));
-	}
-
-}
