@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.exception.FilmNotFoundException;
 import com.example.model.Film;
 import com.example.service.FilmService;
 
@@ -32,9 +33,8 @@ public class FilmController {
 	}
 	
 	@GetMapping("/readOne/{id}")
-	public ResponseEntity<Optional<Film>> readId(@PathVariable Integer id ) {
-		return ResponseEntity.ok(this.service.readOne(id));
-	}
+	public ResponseEntity<Optional<Film>> readId(@PathVariable Integer id ){
+		return ResponseEntity.ok(this.service.readOne(id));}
 	
 	@PutMapping("/updateFilm/{id}")
 	public ResponseEntity<Film> update(@RequestBody Film film,@PathVariable Integer id){
@@ -43,6 +43,14 @@ public class FilmController {
 	@DeleteMapping("/deleteFilm/{id}")
 	public ResponseEntity<?> delete(@PathVariable Integer id ) {
 		return ResponseEntity.ok(this.service.delete(id));
+	}
+	@GetMapping("/readByTitle/{title}")
+	public ResponseEntity<List<Film>> readByTitle(@PathVariable String title ) {
+		return ResponseEntity.ok(this.service.readByTitle(title));
+	}
+	@GetMapping("/readByYear/{genre}/{year}")
+	public ResponseEntity<List<Film>> readByYear(@PathVariable String genre, @PathVariable int year) {
+		return ResponseEntity.ok(this.service.readByYear(genre, year));
 	}
 	
 }
